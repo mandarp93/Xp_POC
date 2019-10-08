@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue">
+  <!-- <a class="navbar-brand" href="#">BaggageIT</a> -->
+  <div id="logo">
+    <h1> <a href=""><span class="log-w3pvt">JusB</span>aggIt</a> <label class="sub-des">Online
+        Store</label></h1>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/productdetails">Bags</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/contactus" tabindex="1">ContactUs</a>
+      </li>
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+       <button class="btn btn-danger my-2 my-sm-0">LogOut</button>
+    </form> -->
+  </div>
+</nav>
+
+<!--Body-->
+<div id="top" class="col-md-12 row">
+  <div class="col-md-4"></div>
+  <div id="f1" class="col-md-4 top">
+    <img class="mx-auto d-block" src="../assets/images/icons8-user-male-64.png">
+    <form class="col-md-12" #form=ngForm (ngSubmit)="onlogin(form)">
+      <!-- <div class="col-form-label">
+        <h2 style="text-align: center">Sign In</h2>
+      </div> -->
+      <div class="form-group">
+        <label>UserName:</label>
+        <input type="text" class="form-control" name="emailId" placeholder="UserName" ngModel required email
+          #emval=ngModel>
+        <div *ngIf="emval.invalid">
+          <div *ngIf="emval.touched">
+            <div *ngIf="emval.errors.required">
+              <p style="color: red">Email cant be blank</p>
+            </div>
+            <div *ngIf="emval.errors.email" style="color: red">Email improper</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" name="password" placeholder="Password" ngModel required password
+          #password=ngModel>
+        <div *ngIf="password.invalid">
+          <div *ngIf="password.touched">
+            <div *ngIf="password.errors.required">
+              <p style="color: red">Password cant be blank</p>
+            </div>
+            <div *ngIf="password.errors.email" style="color: red">Password improper</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="checkbox col-md-6">
+          <label><input type="checkbox">Remember Me</label>
+        </div>
+        <div class="col-md-6">
+          <a href="/passchange" class="text-right">Forgot password?</a>
+        </div>
+      </div>
+      <div style="text-align: center">
+        <button style="width: 20%;" type="submit" ngModel class="btn btn-success">Login</button>
+        <ul class="list-login-bottom">
+          <a href="/register" class="">Don't have an Account? Sign Up here</a>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue">
+    <!-- <a class="navbar-brand" href="#">BaggageIT</a> -->
+    <div id="logo">
+        <h1><a href="/"><span class="log-w3pvt">B</span>aggage</a><label class="sub-des">Online
+                Store</label>
+        </h1>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/productdetails">Bags</a>
+            </li>
+            <li class="nav-item" *ngIf='user!=null'>
+                <a class="nav-link" href="/custdash">Profile</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" (click)="CategorySelect(1)">Handbags</a>
+                    <a class="dropdown-item" (click)="CategorySelect(2)">Purses</a>
+                    <a class="dropdown-item" (click)="CategorySelect(3)">Backpacks</a>
+                    <a class="dropdown-item" (click)="CategorySelect(5)">TouristBags</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" *ngIf='user==null'>
+            <a class="nav-link" href="/login"><span class="fa fa-pencil-square-o"></span>SignIn</a>
+        </form>
+        <form class="form-inline my-2 my-lg-0" *ngIf='user!=null'>
+            <a class="nav-link" href="/custdash"><span class="fa fa-pencil-square-o"></span>{{user}}</a>
+        </form>
+        <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+         <button class="btn btn-danger my-2 my-sm-0">LogOut</button>
+      </form> -->
+    </div>
+</nav>
+
+<!-- <div id="log" class="nav navbar-nav navbar-right">
+    <a href="/login" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
+   
+</div> -->
+
+<div class="container top">
+    <div id="f1" class="row" *ngIf='singleProduct != null'>
+        <div class="col-md-4">
+            <div id="pname" class="card-header-tabs" style="align-content: center">
+                <h6>{{singleProduct?.productName}}</h6>
+            </div>
+            <div class="col-md-3">
+                <div class="image">
+                    <img src="/assets/images/{{singleProduct.image}}" alt="Wrong ImagePath">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h5 style="align-content: center">Product Description</h5>
+            <div class="card-body">
+                <h6>Price: {{singleProduct.price | currency : 'INR'}}</h6>
+            </div>
+            <div class="card-footer">
+                <h6>Details: {{singleProduct.details}}</h6>
+            </div>
+            <div id="pname"><strong>Quantity: </strong><span><input type="number" min="1" max="5"
+                        [(ngModel)]="QTY"></span>
+            </div>
+            <hr>
+            <div class="row">
+                <button class="btn btn-warning" (click)="CartAdd(singleProduct)">AddToCart</button>
+                <button class="btn btn-warning" (click)="BuyProduct(singleProduct)">BuyNow</button>
+            </div>
+            <!-- <td *ngIf="prod.Quantity != 0">{{prod.UnitPrice * prod.Quantity}}</td> -->
+            <!-- <input type="number" [ngModel]="count" class="form-control">
+            <button type="button" style="margin-left: 10px" (click)="onAddQuantity(prod)"
+                class="btn btn-success">+</button>
+
+            <button style="margin-left: 30px" type="button" (click)="onRemoveQuantity(prod)"
+                class="btn btn-danger">-</button> -->
+        </div>
+    </div>
+</div>
+
+<!-- info --
+<div class="col-md-9"> -->
+<!-- title row --
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{singleProduct?.productName}}</h2>
+        </div>
+    </div>
+    <!-- details --
+    <div class="row">
+        <div class="col-md-12">
+            <div><strong>Details: </strong></div>
+            <p>{{singleProduct?.details}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h4><strong>Price: </strong> <span>{{singleProduct?.price | currency: 'INR'}}</span></h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-body">
+            <img src="/assets/images/{{singleProduct.image}}" alt="" style="width: 100%">
+        </div>
+
+        <button (click)="onAddToCart()" class="btn btn-warning">Add To Cart</button>
+        <button (click)="onBuyNow()" style="margin-left: 20px" class="btn btn-success">Buy Now</button>
+    </div>
+</div>-->

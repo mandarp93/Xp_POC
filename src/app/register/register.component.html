@@ -1,0 +1,127 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue">
+    <!-- <a class="navbar-brand" href="#">BaggageIT</a> -->
+    <div id="logo">
+        <h1><a href="/"><span class="log-w3pvt">B</span>aggage</a><label class="sub-des">Online
+                Store</label>
+        </h1>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/productdetails">Bags</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">SignIn</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Bags
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Men</a>
+                    <a class="dropdown-item" href="#">Women</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li> -->
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+         <button class="btn btn-danger my-2 my-sm-0">LogOut</button>
+      </form> -->
+    </div>
+</nav>
+
+<div id="top" class="col-md-12 row">
+    <div class="col-md-4"></div>
+    <div id="f1" class="col-md-4 top">
+        <form #data=ngForm class="form-group col-md-12" (ngSubmit)="onRegister(data)">
+            <div class="col-form-label top-w3pvt">
+                <h2 style="text-align: center">Sign Up</h2>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="firstName">FirstName:</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="FirstName" ngModel firstName
+                        required #fname=ngModel>
+                    <div *ngIf="fname.invalid">
+                        <div *ngIf="fname.touched">
+                            <div *ngIf="fname.errors.required">
+                                <p style="color: red">FirstName cant be blank</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">LastName:</label>
+                    <input type="text" class="form-control" name="lastName" placeholder="lastName" ngModel
+                        required #lname=ngModel>
+                    <div *ngIf="lname.invalid">
+                        <div *ngIf="lname.touched">
+                            <div *ngIf="lname.errors.required">
+                                <p style="color: red">LastName cant be blank</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">EmailId:</label>
+                <input type="email" class="form-control" name="emailId" placeholder="Email" ngModel required email
+                    #emval=ngModel>
+                <div *ngIf="emval.invalid">
+                    <div *ngIf="emval.touched">
+                        <div *ngIf="emval.errors.required">
+                            <p style="color: red">Email cant be blank</p>
+                        </div>
+                        <div *ngIf="emval.errors.email" style="color: red">Email improper</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" class="form-control" name="password" placeholder="Password" ngModel required password
+                    #pass=ngModel>
+                <div *ngIf="pass.invalid">
+                    <div *ngIf="pass.touched">
+                        <div *ngIf="pass.errors.required">
+                            <p style="color: red">Password cant be blank</p>
+                        </div>
+                        <div *ngIf="pass.errors.password" style="color: red">Password improper</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">MobileNo:</label>
+                <input type="number" class="form-control" name="mobileNo" placeholder="Mobile" ngModel>
+            </div>
+            <!--<div class="form-group">
+                <label for="regdate">RegisteredOn:</label>
+                <input type="datetime-local" class="form-control" name="regdate" placeholder="date" ngModel>
+            </div> -->
+            <!-- <div class="form-group">
+                <label for="role">RoleId:</label>
+                <input type="number" class="form-control" name="roleId" placeholder="role" ngModel>
+            </div> -->
+            <div class="col-md-12" style="text-align: center">
+                <button type="submit" class="btn btn-success">Register</button>
+                <!-- <button type="button" routerLink="/login" class="btn btn-success">Sign In</button> -->
+            </div>
+        </form>
+        <!-- <button type="submit" class="btn-warning" (click)=GetUser()>Load Users</button> -->
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue" *ngIf='role==1'>
+    <!-- <a class="navbar-brand" href="#">BaggageIT</a> -->
+    <div id="logo">
+        <h1> <a href=""><span class="log-w3pvt">JusB</span>aggIt</a> <label class="sub-des">Online
+                Store</label></h1>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/productdetails">Bags</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/contactus" tabindex="1">ContactUs</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-danger my-2 my-sm-0" (click)="onLogOut()">LogOut</button>
+        </form>
+    </div>
+</nav>
+
+<div id="top" class="col-md-12 row">
+    <div class="col-md-4"></div>
+    <div id="f1" class="col-md-4 top">
+        <form #p=ngForm class="form-group col-md-12" (ngSubmit)="AddProduct(p)">
+            <div class="col-form-label">
+                <h2 style="text-align: center"></h2>
+            </div>
+            <div class="form-group">
+                <label for="productName">ProductName:</label>
+                <input type="text" class="form-control" name="productName" placeholder="ProductName" ngModel required
+                    productname #pname=ngModel>
+            </div>
+            <div *ngIf="pname.invalid">
+                <div *ngIf="pname.touched">
+                    <div *ngIf="pname.errors.required">
+                        <p style="color: red">ProductName cant be blank</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="details">Details:</label>
+                <input type="text" class="form-control" name="details" placeholder="ProdDetails" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="text" class="form-control" name="quantity" placeholder="Quantity" ngModel required quantity
+                    #qty=ngModel>
+                <div *ngIf="qty.invalid">
+                    <div *ngIf="qty.touched">
+                        <div *ngIf="qty.errors.required">
+                            <p style="color: red">Quantity cant be blank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Price">Price:</label>
+                <input type="number" class="form-control" name="price" placeholder="Price" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="file" class="form-control" name="image" placeholder="Image" ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="CatId">CategoryId:</label>
+                <input type="number" class="form-control" name="categId" placeholder="Category" ngModel>
+            </div>
+            <!-- <div class="form-group">
+                <label for="mobile">MobileNo:</label>
+                <input type="number" class="form-control" name="mobile" placeholder="Mobile" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="regdate">RegisteredOn:</label>
+                <input type="datetime-local" class="form-control" name="regdate" placeholder="date" ngModel>
+            </div> -->
+            <div class="col-md-12" style="text-align: center">
+                <button id="bt" style="width: 20%" type="submit" class="btn btn-success">Add</button>
+            </div>
+        </form>
+        <button id="bt" (click)="GetProducts()" type="submit" class="btn btn-warning">Show Products</button>
+    </div>
+</div>
+<!-- <div>
+    <li *ngFor="let pd of productlist">
+            {{pd | json}}
+    </li>
+</div> -->

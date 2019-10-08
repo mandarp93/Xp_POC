@@ -1,0 +1,68 @@
+.top{
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.sub-des {
+    text-transform: uppercase;
+    display: block;
+    font-size: 0.3em;
+    margin: 0;
+    color: #5b7a9a;
+    letter-spacing: 4px;
+    font-weight: 600;
+    text-shadow: 3px 1px 3px rgba(78, 73, 73, 0.21);
+}
+
+/*-- header --*/
+.forms {
+    margin-top: 1.4em;
+}
+
+header a.btn {
+    border-radius: 4px;
+    color: #4d6171;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+}
+
+header a.btn span {
+    color: #fff;
+}
+
+.top-w3pvt {
+    border-bottom: 1px solid #8bb4df;
+    padding-bottom: 0.5em;
+}
+
+#f1
+{
+    border: 5px solid grey;
+    padding:  2px 4px; 
+    box-shadow: 10px 10px 5px
+}
+
+#logo a {
+    float: left;
+    font-size: .8em;
+    display: initial;
+    margin: 0;
+    letter-spacing: 0px;
+    color: #333;
+    font-weight: 300;
+    padding: 3px 0;
+    border: none;
+}
+
+#logo a span {
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-shadow: 3px 1px 3px rgba(19, 18, 18, 0.19);
+}
+
+.btn{
+    margin: 20px;
+    text-align: center
+}

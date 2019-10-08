@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg ">
+  <div id="logo">
+    <h1> <a href=""><span class="log-w3pvt">JusB</span>aggIt</a> <label class="sub-des">Online
+        Store</label></h1>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/productdetails">Bags</a>
+      </li>
+      <li class="nav-item" *ngIf='user!=null'>
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dashboard
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" (click)="showOrders()">Orders</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Wishlists</a>
+        </div>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button type="" class="btn ">
+        <i class="fas fa-cart-plus my-4 my-sm-2 top" (click)="showUserCart()"></i><span
+          class="badge badge-light"></span>
+        <span class="sr-only"></span>
+      </button>
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button> -->
+      <button class="btn btn-danger my-2 my-sm-0" (click)="onLogOut()">LogOut</button>
+    </form>
+  </div>
+</nav>
+<!--Body-->
+<div class="row">
+  <div class="col-md-2">
+    <table class="table" style="background-color: #0e0d0d; color: white;">
+      <tbody>
+        <tr>
+          <td style="vertical-align: middle;">
+            <a style="color: aqua">Dashboard</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">
+            <a routerLink="/customer/profile" style="color: aqua">Profile</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">
+            <a (click)="showOrders()" style="color: aqua">Orders</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">
+            <a routerLink="/wishlists" style="color: aqua">Wishlists</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-10">
+    <img class="h-95" src="../assets/images/travelwithbag.jpg" class="d-block w-100" alt="..."> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+
+  </div>
+</div>

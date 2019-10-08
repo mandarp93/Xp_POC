@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue">
+    <!-- <a class="navbar-brand" href="#">BaggageIT</a> -->
+    <div id="logo">
+        <h1><a href="/"><span class="log-w3pvt">B</span>aggage</a><label class="sub-des">Online
+                Store</label>
+        </h1>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/productdetails">Bags</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+            </li> -->
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+       <button class="btn btn-danger my-2 my-sm-0">LogOut</button>
+    </form> -->
+        <form class="form-inline my-2 my-lg-0" *ngIf='user==null'>
+            <a class="nav-link" href="/login"><span class="fa fa-pencil-square-o"></span>SignIn</a>
+        </form>
+        <form class="form-inline my-2 my-lg-0" *ngIf='user!=null'>
+            <a class="nav-link" href="/custdash"><span class="fa fa-user"></span>{{user}}</a>
+        </form>
+    </div>
+</nav>
+
+
+<div id="top" class="col-md-12 row" *ngIf='user!=null'>
+    <div class="col-md-4">
+    </div>
+    <div id="f1" class="col-md-4 top">
+        <!-- <img class="mx-auto d-block" src="../assets/images/icons8-user-male-64.png"> -->
+        <form class="col-md-12" #form=ngForm (ngSubmit)="onAdd(form)">
+            <div class="col-form-label">
+                <h4 style="text-align: center">Please Add Your Address Details</h4>
+            </div>
+            <div class="form-group">
+                <label>User:</label>
+                <input type="text" class="form-control" name="user" [disabled]="!form.valid" placeholder="{{user}}">
+                <!-- <div *ngIf="cityval.invalid">
+                    <div *ngIf="cityval.touched">
+                        <div *ngIf="cityval.errors.required">
+                            <p style="color: red">City cant be blank</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label>City:</label>
+                <input type="text" class="form-control" name="city" placeholder="City" ngModel required city
+                    #cityval=ngModel>
+                <div *ngIf="cityval.invalid">
+                    <div *ngIf="cityval.touched">
+                        <div *ngIf="cityval.errors.required">
+                            <p style="color: red">City cant be blank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>State:</label>
+                <input type="text" class="form-control" name="state" placeholder="State" ngModel required state
+                    #stval=ngModel>
+                <div *ngIf="stval.invalid">
+                    <div *ngIf="stval.touched">
+                        <div *ngIf="stval.errors.required">
+                            <p style="color: red">State cant be blank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>PinCode:</label>
+                <input type="text" class="form-control" name="pincode" placeholder="Pincode" ngModel required pincode
+                    #pin=ngModel>
+                <div *ngIf="pin.invalid">
+                    <div *ngIf="pin.touched">
+                        <div *ngIf="pin.errors.required">
+                            <p style="color: red">PinCode cant be blank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>LandMark:</label>
+                <input type="text" class="form-control" name="landmark" placeholder="Landmark" ngModel required landmark
+                    #lan=ngModel>
+                <div *ngIf="lan.invalid">
+                    <div *ngIf="lan.touched">
+                        <div *ngIf="lan.errors.required">
+                            <p style="color: red">LandMark cant be blank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: left">
+                <button type="submit" [disabled]="!form.valid" class="btn btn-success">Add
+                    Address</button>
+            </div>
+        </form>
+    </div>
+</div>
